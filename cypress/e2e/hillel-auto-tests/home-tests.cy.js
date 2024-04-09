@@ -1,6 +1,5 @@
 describe('Social links', () => {
   beforeEach(() => {
-    // Відкриваємо сторінку
     cy.visit('https://qauto.forstudy.space/', {
       auth: {
         username: 'guest',
