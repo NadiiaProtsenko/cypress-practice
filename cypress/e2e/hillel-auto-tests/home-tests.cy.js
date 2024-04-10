@@ -1,4 +1,4 @@
-describe('Social links', () => {
+describe('Social links and Sign In/Sign Up forms', () => {
   beforeEach(() => {
     cy.visit('https://qauto.forstudy.space/', {
       auth: {
@@ -27,4 +27,15 @@ describe('Social links', () => {
   it('Instagram icon should open the Instagram page', () => {
     cy.get('.icon-instagram').parent('a').invoke('attr', 'href').should('contain', 'instagram.com');
   });
+
+  it('Sign In button should open the login form', () => {
+    cy.contains('Sign In').click();
+    cy.get('div.modal-content').should('be.visible');
+  });
+  
+  it('Sign Up button should open the registration form', () => {
+    cy.get('.hero-descriptor_btn').click();
+    cy.get('div.modal-content').should('be.visible');
+  });
 });
+
